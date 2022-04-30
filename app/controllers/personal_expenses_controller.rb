@@ -1,0 +1,2 @@
+class PersonalExpensesController < ApplicationController
+end

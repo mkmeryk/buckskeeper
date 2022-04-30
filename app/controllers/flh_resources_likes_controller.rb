@@ -1,0 +1,2 @@
+class FlhResourcesLikesController < ApplicationController
+end

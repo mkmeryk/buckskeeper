@@ -1,0 +1,2 @@
+class FlhEventsController < ApplicationController
+end

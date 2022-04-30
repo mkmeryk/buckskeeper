@@ -1,0 +1,2 @@
+class PersonalIncomesController < ApplicationController
+end

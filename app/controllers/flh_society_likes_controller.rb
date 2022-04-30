@@ -1,0 +1,2 @@
+class FlhSocietyLikesController < ApplicationController
+end

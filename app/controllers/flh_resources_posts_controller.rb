@@ -1,0 +1,2 @@
+class FlhResourcesPostsController < ApplicationController
+end

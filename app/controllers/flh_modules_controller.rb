@@ -1,0 +1,2 @@
+class FlhModulesController < ApplicationController
+end

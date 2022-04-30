@@ -1,0 +1,2 @@
+class BusinessSavingsController < ApplicationController
+end
