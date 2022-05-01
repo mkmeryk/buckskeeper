@@ -1,0 +1,6 @@
+<div>
+    <% @business_incomes.each do |income| %>
+        <%= link_to income.title, business_income_path(income) %>
+        <br>
+    <% end %>
+</div>

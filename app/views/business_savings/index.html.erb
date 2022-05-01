@@ -1,0 +1,6 @@
+<div>
+    <% @business_savings.each do |saving| %>
+        <%= link_to saving.title, business_saving_path(saving) %>
+        <br>
+    <% end %>
+</div>

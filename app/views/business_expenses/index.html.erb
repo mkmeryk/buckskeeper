@@ -1,0 +1,6 @@
+<div>
+    <% @business_expenses.each do |expense| %>
+        <%= link_to expense.title, business_saving_path(expense) %>
+        <br>
+    <% end %>
+</div>

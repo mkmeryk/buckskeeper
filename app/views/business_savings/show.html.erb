@@ -1,0 +1,42 @@
+<br>
+title:
+<%= @business_saving.title %>
+<br>
+discroption:
+<%= @business_saving.description %>
+<br>
+srouce:
+<%= @business_saving.source %>
+<br>
+amount:
+<%= @business_saving.amount %>
+<br>
+style:
+<%= @business_saving.style %>
+<br>
+category:
+<%= @business_saving.category %>
+<br>
+date:
+<%= @business_saving.date %>
+<br>
+req date:
+<%= @business_saving.req_date %>
+<br>
+user_id:
+<%= @business_saving.user_id %>
+<br>
+created at:
+<%= @business_saving.created_at %>
+
+<br>
+<% if can? :crud, @business_saving %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_business_saving_path(@business_saving), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', business_saving_path(@business_saving), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
