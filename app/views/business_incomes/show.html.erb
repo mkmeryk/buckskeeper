@@ -1,0 +1,43 @@
+<br>
+title:
+<%= @business_income.title %>
+<br>
+discroption:
+<%= @business_income.description %>
+<br>
+srouce:
+<%= @business_income.source %>
+<br>
+amount:
+<%= @business_income.amount %>
+<br>
+style:
+<%= @business_income.style %>
+<br>
+category:
+<%= @business_income.category %>
+<br>
+date:
+<%= @business_income.date %>
+<br>
+req date:
+<%= @business_income.req_date %>
+<br>
+user_id:
+<%= @business_income.user_id %>
+<br>
+created at:
+<%= @business_income.created_at %>
+
+<br>
+
+<% if can? :crud, @business_income %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_business_income_path(@business_income), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', business_income_path(@business_income), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>

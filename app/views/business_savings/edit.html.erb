@@ -1,0 +1,50 @@
+<%= form_with(model: @business_saving, url: business_saving_path , method: :patch ) do |f| %>
+    <div>
+        <%= f.label :title %>
+        <br>
+        <%= f.text_field :title%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :source %>
+        <br>
+        <%= f.text_field :source%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :amount %>
+        <br>
+        <%= f.number_field :amount%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :date %>
+        <br>
+        <%= f.date_field :date%>
+    </div>
+    <br>
+    <div>
+        <div>
+            <%= f.radio_button :style, "fixed" %>
+            <%= f.label :style, "Same every month" %>
+        </div>
+        <div>
+            <%= f.radio_button :style, "fluid" %>
+            <%= f.label :style, "Different every month" %>
+        </div>
+    </div>
+    <br>
+    <div>
+        <%= f.label :req_date %>
+        <br>
+        <%= f.number_field :req_date%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :description %>
+        <br>
+        <%= f.text_area:description%>
+    </div>
+    <br>
+    <%= f.submit  "Submit" %>
+<% end %>

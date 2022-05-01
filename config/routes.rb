@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   resource :business do
+    get('/',{to:'business#show'})
     resources :income, controller: 'business_incomes'
     resources :expenses, controller: 'business_expenses'
     resources :savings, controller: 'business_savings'
