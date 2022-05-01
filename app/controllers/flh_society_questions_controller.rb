@@ -1,0 +1,2 @@
+class FlhSocietyQuestionsController < ApplicationController
+end

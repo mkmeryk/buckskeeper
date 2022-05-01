@@ -1,0 +1,2 @@
+class PersonalSavingsController < ApplicationController
+end
