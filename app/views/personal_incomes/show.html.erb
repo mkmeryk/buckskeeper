@@ -1,0 +1,43 @@
+<br>
+title:
+<%= @personal_income.title %>
+<br>
+discroption:
+<%= @personal_income.description %>
+<br>
+srouce:
+<%= @personal_income.source %>
+<br>
+amount:
+<%= @personal_income.amount %>
+<br>
+style:
+<%= @personal_income.style %>
+<br>
+category:
+<%= @personal_income.category %>
+<br>
+date:
+<%= @personal_income.date %>
+<br>
+req date:
+<%= @personal_income.req_date %>
+<br>
+user_id:
+<%= @personal_income.user_id %>
+<br>
+created at:
+<%= @personal_income.created_at %>
+
+<br>
+
+<% if can? :crud, @personal_income %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_personal_income_path(@personal_income), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', personal_income_path(@personal_income), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>

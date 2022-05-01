@@ -6,16 +6,16 @@ Rails.application.routes.draw do
   root "welcome#index"
   get('/flh',{to:'flh#index'})
   resources :users
-  resource :sessions, only: [:new, :destroy, :create]
+  resource :session, only: [:new, :destroy, :create]
 
-  namespace :flh do
-    namespace :resources do
+  resource :flh do
+    resource :resources do
       resources :posts, controller: 'flh_resources_post' do
         resources :likes, shallow: true, only: [:create, :destroy], controller: 'flh_resources_likes'
         get :liked, on: :collection
       end
     end
-    namespace :society do
+    resource :society do
       resources :questions, controller: 'flh_society_questions' do
         resources :answers, only:[:create, :destroy], controller: 'flh_society_answers'
         resources :likes, shallow: true, only: [:create, :destroy], controller: 'flh_society_likes'
@@ -27,19 +27,19 @@ Rails.application.routes.draw do
      
   end
   
-  namespace :personal do
+  resource :personal, only:[:show] do
+    get('/',{to:'personal#show'})
     resources :income, controller: 'personal_incomes'
     resources :expenses, controller: 'personal_expenses'
     resources :savings, controller: 'personal_savings'
   end
 
-  namespace :business do
+  resource :business do
     resources :income, controller: 'business_incomes'
     resources :expenses, controller: 'business_expenses'
     resources :savings, controller: 'business_savings'
   end
  
-
 
  
 

@@ -13,6 +13,28 @@
   <body>
     <%= link_to 'Buckskeeper', root_path %>
     <%= link_to 'FLH', flh_path %>
+    <%= link_to 'personal', personal_path %>
+    <%if(user_signed_in?) %>
+      <div class="d-flex justify-content-between bg-info p-2 text-dark bg-opacity-50">
+        <div class="p-1 align-self-center">
+          Hello <%= current_user.first_name%>!
+        </div>
+        <div class="p-1">
+          <%= button_to "Log out", session_path, method: :delete, class:"btn btn-primary" %>
+        </div>    
+      </div>
+    <% else %>
+      <div class="d-flex justify-content-between bg-info p-3 text-dark bg-opacity-50">      
+        <div class="d-flex justify-content-end">
+          <div class="p-1">
+            <%= link_to 'Sign In Page', new_session_path%>
+          </div>
+          <div class="p-1">
+            <%= link_to 'Sign Up Page', new_user_path%>
+          </div>  
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
