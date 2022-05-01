@@ -27,7 +27,8 @@ Rails.application.routes.draw do
      
   end
   
-  resource :personal do
+  resource :personal, only:[:show] do
+    get('/',{to:'personal#show'})
     resources :income, controller: 'personal_incomes'
     resources :expenses, controller: 'personal_expenses'
     resources :savings, controller: 'personal_savings'

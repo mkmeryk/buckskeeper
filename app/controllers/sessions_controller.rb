@@ -5,7 +5,10 @@ class SessionsController < ApplicationController
     
     def create
         @user = User.find_by_email params[:email]
+        puts @user.email
+        puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>i'm here at sessions create"
         if @user && @user.authenticate(params[:password])
+            puts ">>>>>>>>>>>>>>>>>>I am loged in now as #{@user.full_name}"
             session[:user_id] = @user.id
             redirect_to root_path, {notice: "Logged in"}
         else

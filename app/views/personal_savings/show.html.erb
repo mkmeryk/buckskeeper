@@ -1,0 +1,42 @@
+<br>
+title:
+<%= @personal_saving.title %>
+<br>
+discroption:
+<%= @personal_saving.description %>
+<br>
+srouce:
+<%= @personal_saving.source %>
+<br>
+amount:
+<%= @personal_saving.amount %>
+<br>
+style:
+<%= @personal_saving.style %>
+<br>
+category:
+<%= @personal_saving.category %>
+<br>
+date:
+<%= @personal_saving.date %>
+<br>
+req date:
+<%= @personal_saving.req_date %>
+<br>
+user_id:
+<%= @personal_saving.user_id %>
+<br>
+created at:
+<%= @personal_saving.created_at %>
+
+<br>
+<% if can? :crud, @personal_saving %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_personal_saving_path(@personal_saving), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', personal_saving_path(@personal_saving), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>

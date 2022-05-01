@@ -1,0 +1,6 @@
+<div>
+    <% @personal_incomes.each do |income| %>
+        <%= link_to income.title, personal_income_path(income) %>
+        <br>
+    <% end %>
+</div>

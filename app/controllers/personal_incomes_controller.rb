@@ -44,7 +44,7 @@ class PersonalIncomesController < ApplicationController
         if can?(:delete, @personal_income)
             @personal_income.destroy
             flash.alert = "Deleted the personal_income"
-            redirect_to personal_incomes_path           
+            redirect_to personal_income_index_path           
         else
             flash.notice = "Access denied"
             redirect_to new_session_path

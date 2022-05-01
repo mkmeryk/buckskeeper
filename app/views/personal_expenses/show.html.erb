@@ -1,0 +1,45 @@
+<br>
+title:
+<%= @personal_expense.title %>
+<br>
+discroption:
+<%= @personal_expense.description %>
+<br>
+srouce:
+<%= @personal_expense.source %>
+<br>
+amount:
+<%= @personal_expense.amount %>
+<br>
+style:
+<%= @personal_expense.style %>
+<br>
+category:
+<%= @personal_expense.category %>
+<br>
+type:
+<%= @personal_expense.type %>
+<br>
+date:
+<%= @personal_expense.date %>
+<br>
+req date:
+<%= @personal_expense.req_date %>
+<br>
+user_id:
+<%= @personal_expense.user_id %>
+<br>
+created at:
+<%= @personal_expense.created_at %>
+
+<br>
+<% if can? :crud, @personal_expense %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_personal_expense_path(@personal_expense), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', personal_expense_path(@personal_expense), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
