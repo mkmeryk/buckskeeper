@@ -46,6 +46,10 @@ class Ability
       user == flh_module.user
     end
 
+    can :crud, FlhEvent do |flh_event|
+      user == flh_event.user
+    end
+
     can :crud, FlhSocietyQuestion do |question|
       user == question.user
     end

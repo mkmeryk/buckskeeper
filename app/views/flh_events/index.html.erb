@@ -1,0 +1,6 @@
+<div>
+    <% @flh_events.each do |flh_event| %>
+        <%= link_to flh_event.title, flh_event_path(flh_event) %>
+        <br>
+    <% end %>
+</div>
