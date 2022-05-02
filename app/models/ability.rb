@@ -50,8 +50,16 @@ class Ability
       user == question.user
     end
 
-     can :crud, FlhSocietyAnswer do |answer|
+    can :crud, FlhSocietyAnswer do |answer|
       user == answer.user
+    end
+
+    can :crud, FlhSocietyLike do |like|
+      user == like.user
+    end
+
+    can :destroy, FlhSocietyLike do |like|
+      user == like.user
     end
 
   end

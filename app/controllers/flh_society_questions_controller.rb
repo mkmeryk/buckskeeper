@@ -22,6 +22,7 @@ class FlhSocietyQuestionsController < ApplicationController
     def show
         @flh_society_answer = FlhSocietyAnswer.new
         @flh_society_answers = @flh_society_question.flh_society_answers
+        @like = @flh_society_question.flh_society_likes.find_by(user: current_user)
     end
 
     def index

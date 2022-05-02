@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resource :flh do
     resource :resources do
       resources :posts, controller: 'flh_resources_post' do
-        resources :likes, shallow: true, only: [:create, :destroy], controller: 'flh_resources_likes'
-        get :liked, on: :collection
+        resources :saves, shallow: true, only: [:create, :destroy], controller: 'flh_resources_likes'
+        get :saved, on: :collection
       end
     end
     resource :society do

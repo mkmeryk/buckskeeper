@@ -30,6 +30,15 @@
         <br>
     <% end %>
 </ul>
+<% if @like.present? %>
+                <div class="p-1">
+                    <%= button_to "Unlike", like_path(@like.id), method: :delete , class:"btn btn-primary" %>
+                </div>
+            <% else %>
+                <div class="p-1">
+                    <%= button_to 'Like', flh_society_question_likes_path(@flh_society_question), method: :post , class:"btn btn-primary" %>
+                </div>
+            <% end %>
 <h4>Write your answer</h4>
 
 <% if @flh_society_answer.errors.any? %>
