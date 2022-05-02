@@ -1,0 +1,6 @@
+<div>
+    <% @flh_modules.each do |flh_module| %>
+        <%= link_to flh_module.title, flh_module_path(flh_module) %>
+        <br>
+    <% end %>
+</div>

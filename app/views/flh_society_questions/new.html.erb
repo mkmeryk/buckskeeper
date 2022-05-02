@@ -1,0 +1,15 @@
+<%= form_with(model: @flh_society_question, url: flh_society_questions_path ) do |f| %>
+    <div>
+        <%= f.label :title %>
+        <br>
+        <%= f.text_field :title%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :body %>
+        <br>
+        <%= f.text_field :body%>
+    </div>
+    <br>
+    <%= f.submit  "Submit" %>
+<% end %>
