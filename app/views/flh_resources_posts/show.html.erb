@@ -1,0 +1,21 @@
+<%= @flh_resources_post.title %>
+<%= @flh_resources_post.body%>
+<% if can? :crud, @flh_resources_post %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_flh_resources_post_path(@flh_resources_post), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', flh_resources_post_path(@flh_resources_post), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
+<% if @like.present? %>
+    <div class="p-1">
+        <%= button_to "Unlike", safe_path(@like.id), method: :delete , class:"btn btn-primary" %>
+    </div>
+<% else %>
+    <div class="p-1">
+        <%= button_to 'Like', flh_resources_post_saves_path(@flh_resources_post), method: :post , class:"btn btn-primary" %>
+    </div>
+<% end %>

@@ -1,0 +1,15 @@
+<%= form_with(model: @flh_resources_post, url: flh_resources_posts_path ) do |f| %>
+    <div>
+        <%= f.label :title %>
+        <br>
+        <%= f.text_field :title%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :body %>
+        <br>
+        <%= f.text_field :body%>
+    </div>
+    <br>
+    <%= f.submit  "Submit" %>
+<% end %>

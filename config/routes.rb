@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resource :flh do
     resource :resources do
-      resources :posts, controller: 'flh_resources_post' do
+      resources :posts, controller: 'flh_resources_posts' do
         resources :saves, shallow: true, only: [:create, :destroy], controller: 'flh_resources_likes'
         get :saved, on: :collection
       end
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       end
     end
     resources :modules, controller: 'flh_modules'
-    resources :events, controller: 'fel_events'
+    resources :events, controller: 'flh_events'
      
   end
   

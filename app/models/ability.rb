@@ -62,5 +62,13 @@ class Ability
       user == like.user
     end
 
+    can :crud, FlhResourcesLike do |like|
+      user == like.user
+    end
+
+    can :destroy, FlhResourcesLike do |like|
+      user == like.user
+    end
+
   end
 end

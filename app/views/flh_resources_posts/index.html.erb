@@ -1,0 +1,8 @@
+<div>
+    <% @flh_resources_posts.each do |post| %>
+        <%= link_to post.title, flh_resources_post_path(post) %>
+        <br>
+        <%= post.body%>
+
+    <% end %>
+</div>
