@@ -1,0 +1,61 @@
+<%= @flh_society_question.title %>
+<%= @flh_society_question.body%>
+        <% if can? :crud, @flh_society_question %>
+            <div class="d-flex">
+                <div class="p-1">
+                    <%= button_to 'Edit', edit_flh_society_question_path(@flh_society_question), method: :get , class:"btn btn-primary"%>
+                </div>
+                <div class="p-1"> 
+                    <%= button_to 'Delete', flh_society_question_path(@flh_society_question), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+                </div>
+            </div>
+        <% end %>
+<% @flh_society_answers.each do |answer| %>
+        <div>
+            <li>
+                <div>
+                    <%= answer.body%>
+                </div>
+                <div>
+                    <small>answered <%= time_ago_in_words(answer.created_at) %> ago by <label>Created by: <%= answer.user.full_name%> </label>
+                    </small>
+                </div>
+                <div>
+                    <% if can? :crud, answer %>
+                        <%= button_to "Delete", flh_society_question_answer_path(@flh_society_question.id, answer.id), method: :delete %>
+                    <% end %>                        
+                </div>
+            </li>                
+        </div>
+        <br>
+    <% end %>
+</ul>
+<% if @like.present? %>
+                <div class="p-1">
+                    <%= button_to "Unlike", like_path(@like.id), method: :delete , class:"btn btn-primary" %>
+                </div>
+            <% else %>
+                <div class="p-1">
+                    <%= button_to 'Like', flh_society_question_likes_path(@flh_society_question), method: :post , class:"btn btn-primary" %>
+                </div>
+            <% end %>
+<h4>Write your answer</h4>
+
+<% if @flh_society_answer.errors.any? %>
+    <ul>
+        <% @flh_society_answer.errors.full_messages.each do |msg| %>
+            <li>
+                <%= msg %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+<%= form_with(model:[@flh_society_question, @flh_society_answer], url: flh_society_question_answers_path(@flh_society_question)) do |f|%>
+    <div>
+        <%= f.label :body%>
+        <br>
+        <%= f.text_area :body, cols:50, rows: 2 ,class:"form-control" %>
+    </div>
+    <br>
+    <%= f.submit "answer" , class:"btn btn-primary" %>
+<% end %> 

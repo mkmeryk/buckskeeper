@@ -1,0 +1,24 @@
+title:
+<br>
+<%= @flh_event.title %>
+<br>
+link:
+<br>
+<%= @flh_event.link %>
+<br>
+body:
+<br>
+<%= @flh_event.body %>
+<br>
+<%= @flh_event.date %>
+<br>
+<% if can? :crud, @flh_event %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_flh_event_path(@flh_event), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', flh_event_path(@flh_event), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>

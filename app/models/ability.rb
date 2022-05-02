@@ -41,5 +41,38 @@ class Ability
     can :crud, PersonalSaving do |saving|
       user == saving.user
     end
+
+    can :crud, FlhModule do |flh_module|
+      user == flh_module.user
+    end
+
+    can :crud, FlhEvent do |flh_event|
+      user == flh_event.user
+    end
+
+    can :crud, FlhSocietyQuestion do |question|
+      user == question.user
+    end
+
+    can :crud, FlhSocietyAnswer do |answer|
+      user == answer.user
+    end
+
+    can :crud, FlhSocietyLike do |like|
+      user == like.user
+    end
+
+    can :destroy, FlhSocietyLike do |like|
+      user == like.user
+    end
+
+    can :crud, FlhResourcesLike do |like|
+      user == like.user
+    end
+
+    can :destroy, FlhResourcesLike do |like|
+      user == like.user
+    end
+
   end
 end

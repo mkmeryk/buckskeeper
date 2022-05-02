@@ -1,0 +1,21 @@
+<%= form_with(model: @flh_module, url: flh_module_path, method: :patch ) do |f| %>
+    <div>
+        <%= f.label :title %>
+        <br>
+        <%= f.text_field :title%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :description %>
+        <br>
+        <%= f.text_field :description%>
+    </div>
+    <br>
+    <div>
+        <%= f.label :body %>
+        <br>
+        <%= f.text_field :body%>
+    </div>
+    <br>
+    <%= f.submit  "Submit" %>
+<% end %>

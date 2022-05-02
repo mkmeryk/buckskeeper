@@ -1,0 +1,23 @@
+title:
+<br>
+<%= @flh_module.title %>
+<br>
+description:
+<br>
+<%= @flh_module.description %>
+<br>
+body:
+<br>
+<%= @flh_module.body %>
+<br>
+<br>
+<% if can? :crud, @flh_module %>
+    <div class="d-flex">
+        <div class="p-1">
+            <%= button_to 'Edit', edit_flh_module_path(@flh_module), method: :get , class:"btn btn-primary"%>
+        </div>
+        <div class="p-1"> 
+            <%= button_to 'Delete', flh_module_path(@flh_module), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
