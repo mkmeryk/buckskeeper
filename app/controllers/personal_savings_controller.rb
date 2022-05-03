@@ -2,6 +2,7 @@ class PersonalSavingsController < ApplicationController
 
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_saving, only: [:edit, :update, :show, :destroy]
+    before_action :authorize_individual_account!
 
     def new
         @personal_saving = PersonalSaving.new
@@ -24,7 +25,8 @@ class PersonalSavingsController < ApplicationController
     end
 
     def index
-        @personal_savings = PersonalSaving.all.order(created_at: :desc)
+        @personal_savings = current_user.personal_savings
+        # @personal_savings = PersonalSaving.all.order(created_at: :desc)
 
     end
 

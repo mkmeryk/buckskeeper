@@ -2,7 +2,8 @@ class BusinessIncomesController < ApplicationController
 
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_income, only: [:edit, :update, :show, :destroy]
-
+    before_action :authorize_business_account!
+    
     def new
         @business_income = BusinessIncome.new
     end

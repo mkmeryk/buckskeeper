@@ -2,6 +2,7 @@ class BusinessExpensesController < ApplicationController
 
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_expense, only: [:edit, :update, :show, :destroy]
+    before_action :authorize_business_account!
 
     def new
         @business_expense = BusinessExpense.new
@@ -23,7 +24,8 @@ class BusinessExpensesController < ApplicationController
     end
 
     def index
-        @business_expenses = BusinessExpense.all.order(created_at: :desc)
+        @business_expenses = current_user.business_expenses
+        #@business_expenses = BusinessExpense.all.order(created_at: :desc)
 
     end
 
