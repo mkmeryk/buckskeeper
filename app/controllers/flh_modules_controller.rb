@@ -1,6 +1,7 @@
 class FlhModulesController < ApplicationController
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_module, only: [:edit, :update, :show, :destroy]
+    before_action :authorize_advisor_account!, only:[:new, :create, :destroy, :edit, :update]
 
     def new
         @flh_module = FlhModule.new

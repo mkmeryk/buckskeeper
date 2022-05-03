@@ -1,6 +1,7 @@
 class PersonalExpensesController < ApplicationController
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_expense, only: [:edit, :update, :show, :destroy]
+    before_action :authorize_individual_account!
 
     def new
         @personal_expense = PersonalExpense.new
@@ -22,7 +23,10 @@ class PersonalExpensesController < ApplicationController
     end
 
     def index
-        @personal_expenses = PersonalExpense.all.order(created_at: :desc)
+        @personal_expenses = current_user.personal_expenses
+        #@personal_expenses = PersonalExpense.all.order(created_at: :desc)    
+
+        
 
     end
 

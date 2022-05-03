@@ -2,7 +2,8 @@ class BusinessSavingsController < ApplicationController
 
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_saving, only: [:edit, :update, :show, :destroy]
-
+    before_action :authorize_business_account!
+    
     def new
         @business_saving = BusinessSaving.new
     end

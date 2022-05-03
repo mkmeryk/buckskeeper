@@ -34,21 +34,41 @@ class Ability
 
     can :crud, User, id: user.id
 
-    can :crud, PersonalIncome do |income|
-      user == income.user
+    if user.is_individual
+      can :crud, PersonalIncome do |income|
+        user == income.user
+      end
+
+      can :crud, PersonalSaving do |saving|
+        user == saving.user
+      end
+
+      can :crud, PersonalExpense do |expense|
+        user == expense.user
+      end
+    elsif user.is_business
+      can :crud, BusinessIncome do |income|
+        user == income.user
+      end
+
+      can :crud, BusinessSaving do |saving|
+        user == saving.user
+      end
+
+      can :crud, BusinessExpense do |expense|
+        user == expense.user
+      end
+    elsif user.is_advisor
+      can :crud, FlhModule do |flh_module|
+        user == flh_module.user
+      end
+
+      can :crud, FlhEvent do |flh_event|
+        user == flh_event.user
+      end      
     end
 
-    can :crud, PersonalSaving do |saving|
-      user == saving.user
-    end
 
-    can :crud, FlhModule do |flh_module|
-      user == flh_module.user
-    end
-
-    can :crud, FlhEvent do |flh_event|
-      user == flh_event.user
-    end
 
     can :crud, FlhSocietyQuestion do |question|
       user == question.user
@@ -64,6 +84,10 @@ class Ability
 
     can :destroy, FlhSocietyLike do |like|
       user == like.user
+    end
+
+    can :crud, FlhResourcesPost do |post|
+      user == post.user
     end
 
     can :crud, FlhResourcesLike do |like|

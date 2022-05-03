@@ -1,6 +1,7 @@
 class PersonalIncomesController < ApplicationController
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_income, only: [:edit, :update, :show, :destroy]
+    before_action :authorize_individual_account!
 
     def new
         @personal_income = PersonalIncome.new
@@ -22,7 +23,8 @@ class PersonalIncomesController < ApplicationController
     end
 
     def index
-        @personal_incomes = PersonalIncome.all.order(created_at: :desc)
+        @personal_incomes = current_user.personal_income
+        #@personal_incomes = PersonalIncome.all.order(created_at: :desc)
 
     end
 

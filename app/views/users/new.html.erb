@@ -33,10 +33,17 @@
             <%= f.text_field :password_confirmation ,class:"form-control"%>
         </div>
         <div>
-            <%= f.radio_button :style, is_individual=true %>
-            <%= f.label :style, "Personal Account" %>
-            <%= f.radio_button :style, is_business=true %>
-            <%= f.label :style, "Small Business Account" %>
+            <small>
+                <p>What type of account would you like to signup for?</p>
+                <p>You can also sign up for both</p>
+            </small>
+            
+            <%= f.check_box :is_individual %>
+            <%= f.label :is_individual, "Personal Account" %>
+
+            <%= f.check_box :is_business %>
+            <%= f.label :is_business, "Small Business Account" %>
+
         </div>
         <%= f.submit "Sign Up" , class:"btn btn-primary" %>
     <% end %>
