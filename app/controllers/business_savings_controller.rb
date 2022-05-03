@@ -25,7 +25,8 @@ class BusinessSavingsController < ApplicationController
     end
 
     def index
-        @business_savings = BusinessSaving.all.order(created_at: :desc)
+        @business_savings = current_user.business_savings
+        #@business_savings = BusinessSaving.all.order(created_at: :desc)
 
     end
 

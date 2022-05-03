@@ -24,7 +24,8 @@ class BusinessIncomesController < ApplicationController
     end
 
     def index
-        @business_incomes = BusinessIncome.all.order(created_at: :desc)
+        @business_incomes = current_user.business_incomes
+        #@business_incomes = BusinessIncome.all.order(created_at: :desc)
 
     end
 
