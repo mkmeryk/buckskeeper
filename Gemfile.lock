@@ -71,6 +71,8 @@ GEM
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    by_star (4.0.0)
+      activesupport (>= 3.2.0)
     cancancan (3.3.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -190,6 +192,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  by_star (~> 4.0)
   cancancan
   debug
   faker
