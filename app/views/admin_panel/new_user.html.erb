@@ -1,11 +1,7 @@
-<div class="page_container">
+<h1 class="text-center">Create a new user account</h1>
 
-    <h1 class="text-center">Sign Up</h1>
+    <%= form_with model: @new_user, url: users_path, method: :post do |f|%>
 
-    <%= form_with model: @user do |f|%>
-    <% if @user.errors.any? %>
-        <p><%= @user.errors.full_messages.join(', ') %> </p>
-    <% end %>
         
         <div class="p-1">
             <%= f.label :first_name%>
@@ -33,19 +29,13 @@
             <%= f.text_field :password_confirmation ,class:"form-control"%>
         </div>
         <div>
-            <small>
-                <p>What type of account would you like to signup for?</p>
-                <p>You can also sign up for both</p>
-            </small>
-            
-            <%= f.check_box :is_individual %>
-            <%= f.label :is_individual, "Personal Account" %>
 
-            <%= f.check_box :is_business %>
-            <%= f.label :is_business, "Small Business Account" %>
+            <%= f.check_box :is_advisor %>
+            <%= f.label :is_advisor, "Advisor account" %>
+
+            <%= f.check_box :is_admin %>
+            <%= f.label :is_admin, "Admin account" %>
 
         </div>
         <%= f.submit "Sign Up" , class:"btn btn-primary" %>
     <% end %>
-
-</div>

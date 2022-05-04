@@ -45,4 +45,14 @@ class ApplicationController < ActionController::Base
         end
     end
     helper_method :authorize_advisor_account!
+
+    def authorize_admin_account!
+        unless authenticate_user!
+            unless current_user.is_admin == true
+                redirect_to root_path
+                flash[:alert] = 'Access Denied'
+            end
+        end
+    end
+    helper_method :authorize_admin_account!
 end
