@@ -1,7 +1,8 @@
 class FlhResourcesPostsController < ApplicationController
     before_action :authenticate_user!, only:[ :new, :create, :destroy, :edit, :update ]
     before_action :find_flh_resources_post, only: [:edit, :update, :show, :destroy]
-
+    before_action :authorize_advisor_account!, only: [:new, :create, :edit, :update]
+    
     def new
         @flh_resources_post = FlhResourcesPost.new
     end

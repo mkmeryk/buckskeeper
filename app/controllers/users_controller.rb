@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
 
-    before_action :authenticate_user!, only: [:edit, :update, :edit_password, :update_password]
+    before_action :authenticate_user!, only: [:edit, :update, :edit_password, :update_password, :show]
     before_action :find_user, only: [:edit, :update]
     before_action :authorize!, only: [:edit, :update]
+    before_action :authorize_pass!, only: [ :edit_password, :update_password]
 
     def show
         @user = User.find params[:id]
+        authorize!
     end
 
     def new
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new params.require(:user).permit(
-            :first_name,:last_name,:email,:password,:password_confirmation, :is_advisor, :is_business, :is_individual
+            :first_name,:last_name,:email,:password,:password_confirmation, :is_advisor, :is_business, :is_individual, :phone_number
         )
         if @user.save
             session[:user_id] = @user.id
@@ -28,14 +30,17 @@ class UsersController < ApplicationController
     end
 
     def edit
+        puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@user.id}"
+
     end
 
     def update
-        if @user.update user_params
+        puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@user.id}"
+        if @user.update user_params_update
             flash[notice] = 'Updated Successfully'
             redirect_to root_path
         else
-            render :edit
+            render :edit, status: 303
         end
     end
 
@@ -74,11 +79,24 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:first_name,:last_name,:email,:password,:password_confirmation, :is_advisor, :is_business, :is_individual)
+        params.require(:user).permit(:first_name,:last_name,:email,:password,:password_confirmation, :is_advisor, :is_business, :is_individual, :phone_number)
+    end
+
+    def user_params_update
+        params.require(:user).permit(:first_name,:last_name,:email, :phone_number)
     end
 
     def find_user
         @user = User.find params[:id]
+    end
+
+    def authorize_pass!
+        user = User.find params[:user_id]
+        unless current_user.id == user.id
+            redirect_to root_path 
+            flash[:alert] =  'Access Denied'
+        end
+
     end
 
     def authorize!

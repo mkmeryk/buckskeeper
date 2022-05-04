@@ -1,0 +1,4 @@
+<h1>User Profile</h1>
+<h3>User name: <%= @user.full_name %></h3>
+<%= link_to 'edit your user profile', edit_user_path %>
+<%= link_to 'Change Password', user_edit_password_path(@user.id) %>
