@@ -34,6 +34,7 @@ class Ability
 
     can :crud, User, id: user.id
 
+
     if user.is_individual
       can :crud, PersonalIncome do |income|
         user == income.user
@@ -65,7 +66,12 @@ class Ability
 
       can :crud, FlhEvent do |flh_event|
         user == flh_event.user
-      end      
+      end
+      
+      can :crud, FlhResourcesPost do |post|
+        user == post.user
+      end
+      
     end
 
 
@@ -86,9 +92,6 @@ class Ability
       user == like.user
     end
 
-    can :crud, FlhResourcesPost do |post|
-      user == post.user
-    end
 
     can :crud, FlhResourcesLike do |like|
       user == like.user

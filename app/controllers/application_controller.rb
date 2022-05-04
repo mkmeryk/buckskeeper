@@ -23,9 +23,6 @@ class ApplicationController < ActionController::Base
                 flash[:alert] = 'Access Denied'
             end  
         end
-          
-
-
     end
     helper_method :authorize_individual_account!
 
