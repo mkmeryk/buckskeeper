@@ -12,12 +12,14 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :destroy, :create]
 
   resource :flh do
+
     resource :resources do
       resources :posts, controller: 'flh_resources_posts' do
         resources :saves, shallow: true, only: [:create, :destroy], controller: 'flh_resources_likes'
         get :saved, on: :collection
       end
     end
+
     resource :society do
       resources :questions, controller: 'flh_society_questions' do
         resources :answers, only:[:create, :destroy], controller: 'flh_society_answers'
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
         get :liked, on: :collection
       end
     end
+
     resources :modules, controller: 'flh_modules'
     resources :events, controller: 'flh_events'
      
@@ -44,8 +47,10 @@ Rails.application.routes.draw do
     resources :savings, controller: 'business_savings'
   end
  
-
- 
+  get('admin', to: 'admin_panel#panel')
+  get('newuserbyadmin', to: 'admin_panel#new_user')
+  post('newuserbyadmin', to: 'admin_panel#new_user')
+  
 
 
 end

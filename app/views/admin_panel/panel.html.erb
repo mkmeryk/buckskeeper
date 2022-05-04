@@ -1,0 +1,29 @@
+<div>
+    <h1>Create a new user</h1>
+    <%= link_to 'Create a new user', newuserbyadmin_path %>
+    <h1>All Users</h1>
+    <hr>
+    <% @users.each do |user| %>
+        User name: <%= user.first_name %>
+        |
+        User Id: <%= user.id %>
+        
+        <% if user.is_individual == true %>
+            | Individual 
+        <% end %>
+        
+        <% if user.is_business == true %>
+            | Business 
+        <% end %>
+
+        <% if user.is_advisor == true %>
+            | Advisor 
+        <% end %>
+
+        <% if user.is_admin == true %>
+            | Admin 
+        <% end %>
+        
+        <br>
+    <% end %>
+</div>
