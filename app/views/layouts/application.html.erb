@@ -15,7 +15,9 @@
   <body>
     <div class="navbar">
       <div class="container flex">
-        <h1 class="logo"><%= link_to 'Buckskeeper', root_path %></h1>
+        <div class="logo">
+          <%= link_to image_tag('BucksKeeperLogo.png'), "/" %>
+        </div>
         <nav>
           <ul>
             <li><%= link_to 'FLH', flh_path %></li>
@@ -49,22 +51,23 @@
         <div class="footer flex">
           <div class="footer-item">
             <h3 class="smd">Legal</h3>
-            <h3>Privacy Policy</h3>
-            <h3>Terms & <br> Conditions</h3>
+            <h3><%= link_to 'Privacy Policy', legal_path %></h3>
+            <h3><%= link_to 'Terms & Conditions', legal_path %></h3>
+            
           </div>
           <div class="footer-item">
             <h3 class="smd">Startup</h3>
-            <h3>About Us</h3>
-            <h3>Our Team</h3>
-            <h3>Our Mission</h3>
-            <h3>Dev Team</h3>
+            <h3><%= link_to 'About Us', about_path %></h3>
+            <h3><%= link_to 'Our Team', about_path %></h3>
+            <h3><%= link_to 'Our Mission', about_path %></h3>
+            <h3><%= link_to 'Dev Team', about_path %></h3>
           </div>
           <div class="footer-item">
             <h3 class="smd">Features</h3>
-            <h3>Personal Finances</h3>
-            <h3>Business Finances</h3>
-            <h3>Finacial Litracy Hub</h3>
-            <h3>Advisors Panel</h3>
+            <h3><%= link_to 'Personal Finances', features_path %></h3>
+            <h3><%= link_to 'Business Finances', features_path %></h3>
+            <h3><%= link_to 'Finacial Litracy Hub', features_path %></h3>
+            <h3><%= link_to 'Advisors Panel', features_path %></h3>
           </div>
         </div>
       </div>

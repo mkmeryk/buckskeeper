@@ -1,9 +1,10 @@
 <section class="showcase">
     <div class="container grid grid-2">
-        <div class="showcase-text">
-            <h1>
-                Buckskeeper
-            </h1>
+        <div class="showcase-text flex">
+            <div class="logo-button">
+                <%= image_tag 'BucksKeeperLogo-button-background' %>
+            </div>
+            
         </div>
         <div class="showcase-text">
             <p>
@@ -22,7 +23,7 @@
 </section>
 <section class="stats">
     <div class="container">
-        <h3 class="stats-heading text-center my-1">
+        <h3 class="smd my-2 text-center">
             Take the first step today and get started by <%= link_to 'Signing up', new_user_path%>
         </h3>
         <div class="grid grid-3 text-center my-4">
@@ -45,13 +46,13 @@
 <section class="info bg-primary my-2">
     <div class="container grid">
         <div class="text-center">
-            <h2 class="md my-2">
+            <h2 class="md my-2 text-center">
                 The Path Way To Your Finacial Freedom
             </h2>
             <p class="sm my-1">
                 With the help of Buckskeeper achive your dreams quicker and easier, start investing early. Set your goals, timeline and path with a help of the advisors on our team.
             </p>
-            <a href="" class="btn btn-dark">Our Team</a>
+            <a href="/about" class="btn btn-dark">Our Team</a>
         </div>
     </div>
 </section>
@@ -59,7 +60,7 @@
 <section class="flh">
     <div class="container">
         <div class="text-center">
-            <h2 class="stats-heading text-center my-1 md">
+            <h2 class="md my-2 text-center">
                 <%= link_to 'Fincial Literacy Hub', flh_path %>
             </h2>
             <div class="grid grid-4 text-center my-4" >

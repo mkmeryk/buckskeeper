@@ -1,6 +1,7 @@
 
 <section class="panel">
     <div class="container grid">
+        <div class="my-1"></div>
         <div class="account-info">
             Account info:  <%= link_to current_user.first_name, user_path(current_user) %>
         </div>
@@ -56,9 +57,9 @@
         </div>
         <div class="expenses">
             <h1>all your expenses</h1>
-            your monthly expenses total: $<%= @monthly_expenses_total %>
+            Your monthly expenses total: $<%= @monthly_expenses_total %>
             <em>|</em>
-            your yearly expenses total: $<%= @yearly_expenses_total %>
+            Your yearly expenses total: $<%= @yearly_expenses_total %>
             <div>
                 <% @personal_expenses.each do |expense| %>
                     <%= link_to expense.title, personal_saving_path(expense) %>
@@ -67,11 +68,12 @@
                     <br>
                 <% end %>
             </div>
+        </div>    
         <div class="savings">
             <h1>all your savings</h1>
-            your monthly savings total: $<%= @monthly_savings_total %>
+            Your monthly savings total: $<%= @monthly_savings_total %>
             <em>|</em>
-            your yearly savings total: $<%= @yearly_savings_total %>
+            Your yearly savings total: $<%= @yearly_savings_total %>
             <div>
                 <% @personal_savings.each do |saving| %>
                     <%= link_to saving.title, personal_saving_path(saving) %>

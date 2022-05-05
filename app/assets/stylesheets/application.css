@@ -57,12 +57,23 @@ img{
    width: 100%;
 }
 
+.logo{
+   width: 50px;
+   padding: 0;
+}
+
+.logo-button{
+   width: 200px;
+}
+
 /* navbar  */
 
 .navbar{
    background-color: #152617;
    color: var(--accent-color);
-   height: 70px;
+   height: 80px;
+   scroll-behavior: unset;
+   
 }
 
 .navbar ul{

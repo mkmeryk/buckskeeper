@@ -1,6 +1,7 @@
 
 <section class="panel">
     <div class="container grid">
+        <div class="my-1"></div>
         <div class="account-info">
             Account info:  <%= link_to current_user.first_name, user_path(current_user) %>
         </div>
@@ -40,7 +41,7 @@
                     you have an unhealthy cash flow $<%= @cashflow %>
                 <% end %>
             <% else %>
-                Start by adding an <%= link_to 'Income source', new_business_income_path %>,<%= link_to 'Saving', new_business_saving_path %> or an <%= link_to 'Expense', new_business_expense_path %>
+                Start by adding an <%= link_to 'Income', new_business_income_path %>,<%= link_to 'Saving', new_business_saving_path %> or an <%= link_to 'Expense', new_business_expense_path %> record to your account.
             <% end %>        
         </div>
         <div class="income">
