@@ -252,6 +252,12 @@ img{
    
 }
 
+/* posts */
+.show-post{
+   height: 82vh;
+   position: relative;
+}
+
 /* sign in */
 .sign-in{
    height:100vw; 
