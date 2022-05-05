@@ -234,6 +234,24 @@ img{
    justify-content: space-around;
 }
 
+/* flh society */
+.flex-society{
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+}
+
+/* questions */
+.question{
+   height: 82vh;
+   position: relative;
+}
+
+/* control panel */
+.control-panel-item{
+   
+}
+
 /* sign in */
 .sign-in{
    height:100vw; 
@@ -287,6 +305,8 @@ img{
    outline: none;
 }
 
+
+
 /* utilities */
 
 .container{
@@ -313,6 +333,14 @@ img{
    justify-content: center;
    align-items: center;
    height: 100%;
+}
+
+.flex-end{
+   justify-content: flex-end;
+}
+
+.flex-start{
+   justify-content: flex-start;
 }
 
 .grid{

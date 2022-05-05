@@ -1,15 +1,20 @@
-<%= form_with(model: @flh_society_question, url: flh_society_question_path, method: :patch ) do |f| %>
-    <div>
-        <%= f.label :title %>
+<section class="question">
+    <div class="container grid">
+        <%= form_with(model: @flh_society_question, url: flh_society_question_path, method: :patch ) do |f| %>
+        <div>
+            <%= f.label :title %>
+            <br>
+            <%= f.text_field :title , class:"form-control input"%>
+        </div>
         <br>
-        <%= f.text_field :title%>
-    </div>
-    <br>
-    <div>
-        <%= f.label :body %>
+        <div>
+            <%= f.label :body %>
+            <br>
+            <%= f.text_field :body , class:"form-control input"%>
+        </div>
         <br>
-        <%= f.text_field :body%>
+        <%= f.submit  "Update"  , class:"btn btn-primary my-1 "  %>
+        <% end %>
     </div>
-    <br>
-    <%= f.submit  "Update" %>
-<% end %>
+</section>
+
