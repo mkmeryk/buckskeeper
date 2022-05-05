@@ -17,42 +17,24 @@
         <nav>
           <ul>
             <li><%= link_to 'FLH', flh_path %></li>
-            <li>
-              <%if(user_signed_in?) %>
-                <div >
-                  <div >
-                    Hello <%= current_user.first_name%>!
-                  </div>
-                    <%= link_to 'Your profile', user_path(current_user) %>
-                  <div >
-                    <%= button_to "Log out", session_path, method: :delete, class:"btn btn-primary" %>
-                  </div>    
-                </div>
-                <% if current_user.is_individual == true %>
-                  <%= link_to 'Account over view', personal_path %>
-                <% end %>
-                <% if current_user.is_business == true %>
-                  <%= link_to 'Account over view', business_path %>
-                <% end %>
-                <% if current_user.is_advisor == true %>
-                  <%= link_to 'advisor panel', advisor_path %>
-                <% end %>
-                <% if current_user.is_admin == true %>
-                  <%= link_to 'admin panel', admin_path %>
-                <% end %>
-              <% else %>
-                <div >      
-                  <div >
-                    <div >
-                      <%= link_to 'Sign In Page', new_session_path%>
-                    </div>
-                    <div >
-                      
-                    </div>  
-                  </div>
-                </div>
+            <%if(user_signed_in?) %>
+              <% if current_user.is_individual == true %>
+                <li><%= link_to 'Account over view', personal_path %></li>
               <% end %>
-            </li>
+              <% if current_user.is_business == true %>
+                <li><%= link_to 'Account over view', business_path %></li>
+              <% end %>
+              <% if current_user.is_advisor == true %>
+                <li><%= link_to 'Panel', advisor_path %></li>
+              <% end %>
+              <% if current_user.is_admin == true %>
+                <li><%= link_to 'Panel', admin_path %></li>
+              <% end %>
+              <li><%= button_to "Log out", session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Sign In Page', new_session_path%></li>
+            <% end %>
+            
           </ul>
         </nav>
       </div>
