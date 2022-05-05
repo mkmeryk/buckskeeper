@@ -1,5 +1,5 @@
 <section class="showcase">
-    <div class="container grid">
+    <div class="container grid grid-2">
         <div class="showcase-text">
             <h1>
                 Buckskeeper
@@ -18,5 +18,69 @@
             </p>
         </div>
     
+    </div>
+</section>
+<section class="stats">
+    <div class="container">
+        <h3 class="stats-heading text-center my-1">
+            Take the first step today and get started by <%= link_to 'Signing up', new_user_path%>
+        </h3>
+        <div class="grid grid-3 text-center my-4">
+            <div>
+                <h3>Peace of Mind</h3>
+                <p>Studies have shown how financial health is directly affective on physical and mental health </p>
+            </div>
+            <div>
+                <h3>Helper Tool</h3>
+                <p>Quick and easy tool to add your expenses, savings and income and have a visual of your over all finances </p>
+            </div>
+            <div>
+                <h3>Extra Help</h3>
+                <p>Get connected with licensed advisors to go over your options </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="info bg-primary my-2">
+    <div class="container grid">
+        <div class="text-center">
+            <h2 class="md my-2">
+                The Path Way To Your Finacial Freedom
+            </h2>
+            <p class="sm my-1">
+                With the help of Buckskeeper achive your dreams quicker and easier, start investing early. Set your goals, timeline and path with a help of the advisors on our team.
+            </p>
+            <a href="" class="btn btn-dark">Our Team</a>
+        </div>
+    </div>
+</section>
+
+<section class="flh">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="stats-heading text-center my-1 md">
+                <%= link_to 'Fincial Literacy Hub', flh_path %>
+            </h2>
+            <div class="grid grid-4 text-center my-4" >
+                <div>
+                    <h3><%= link_to 'Modules', flh_modules_path %></h3>
+                    <p>A great way to get a grasb of different advisors educational materials.</p>
+                </div>
+                <div>
+                    <h3><%= link_to 'Society', flh_society_questions_path %></h3>
+                    <p>The best place to ask finacial questions or to start a converstion on a topic with your society. </p>
+                </div>
+                <div>
+                    <h3><%= link_to 'Resources', flh_resources_posts_path %></h3>
+                    <p>A portal to helpful resources that will help you grow your finacial knowladge and to gain interpersonal skills.</p>
+                </div>
+                <div>
+                    <h3><%= link_to 'Events', flh_events_path %></h3>
+                    <p>Get informed by all the events happening around town and find networking oportunities.</p>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </section>
