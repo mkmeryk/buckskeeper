@@ -1,69 +1,86 @@
-<h1>Personal account over view</h1>
-your account <li><%= link_to current_user.first_name, user_path(current_user) %></li>
-<div>
-    <br>
-    income:
-    <br>
-    <%= link_to 'add a personal income', new_personal_income_path %>
-    <br>
-    <%= link_to 'all your income', personal_income_index_path %> 
-    <br>
-    savings:
-    <br>
-    <%= link_to 'add a personal saving', new_personal_saving_path %>
-    <br>
-    <%= link_to 'all your saving', personal_savings_path %> 
-    <br>   
-    expenses:
-    <br>
-    <%= link_to 'add a new expense', new_personal_expense_path %>
-    <br> 
-    <%= link_to 'all your expenses', personal_expenses_path %>
-</div>
-<strong><h1>your over fanancial over view</h1></strong>
-<h1>Cash flow</h1>
-<% if @cashflow != 0 %>
-    <% if @cashflow > 0 %>
-        you have a healthy cash flow $<%= @cashflow %>
-    <% else%>
-        you have an unhealthy cash flow $<%= @cashflow %>
-    <% end %>
-<% else %>
-    Start by adding an <%= link_to 'Income', new_personal_income_path %>, <%= link_to 'Expense', new_personal_expense_path %> or a <%= link_to 'Saving', new_personal_saving_path %> record to your account
-<% end %>
-<h1>all your income</h1>
-Total monthly income: $<%= @monthly_income_total %>
-<em>|</em>
-Total yearly income: $<%= @yearly_income_total %>
-<div>
-    <% @personal_income.each do |income| %>
-        <%= link_to income.title, personal_saving_path(income) %>
-        Amount: $<%= income.amount %>
-        date: <%= income.date %>
-        <br>
-    <% end %>
-</div>
-<h1>all your savings</h1>
-your monthly savings total: $<%= @monthly_savings_total %>
-<em>|</em>
-your yearly savings total: $<%= @yearly_savings_total %>
-<div>
-    <% @personal_savings.each do |saving| %>
-        <%= link_to saving.title, personal_saving_path(saving) %>
-        Amount: $<%= saving.amount %>
-        date: <%= saving.date %>
-        <br>
-    <% end %>
-</div>
-<h1>all your expenses</h1>
-your monthly expenses total: $<%= @monthly_expenses_total %>
-<em>|</em>
-your yearly expenses total: $<%= @yearly_expenses_total %>
-<div>
-    <% @personal_expenses.each do |expense| %>
-        <%= link_to expense.title, personal_saving_path(expense) %>
-        Amount: $<%= expense.amount %>
-        date: <%=expense.date %>
-        <br>
-    <% end %>
-</div>
+
+<section class="panel">
+    <div class="container grid">
+        <div class="account-info">
+            Account info:  <%= link_to current_user.first_name, user_path(current_user) %>
+        </div>
+        <div class="panel-functions flex flex-space-around">
+            <div class="p-2">
+                <br>
+                <%= link_to 'New Income', new_personal_income_path %>
+                <br>
+                <%= link_to 'All your income', personal_income_index_path %> 
+                <br>
+            </div>
+            <div class="p-2">
+                <br>
+                <%= link_to 'New Saving', new_personal_saving_path %>
+                <br>
+                <%= link_to 'All your saving', personal_savings_path %> 
+                <br>
+            </div>
+            <div class="p-2">
+                <br>
+                <%= link_to 'New expense', new_personal_expense_path %>
+                <br> 
+                <%= link_to 'All your expenses', personal_expenses_path %>       
+            </div>
+        </div>
+        <div class="finacial-over-view">
+            <h1>Your over fanancial over view</h1>
+            <hr>
+            <h1>Cash flow</h1>
+            <% if @cashflow != 0 %>
+                <% if @cashflow > 0 %>
+                    you have a healthy cash flow $<%= @cashflow %>
+                <% else%>
+                    you have an unhealthy cash flow $<%= @cashflow %>
+                <% end %>
+            <% else %>
+                Start by adding an <%= link_to 'Income', new_personal_income_path %>, <%= link_to 'Expense', new_personal_expense_path %> or a <%= link_to 'Saving', new_personal_saving_path %> record to your account
+            <% end %>        
+        </div>
+        <div class="income">
+            <h1>all your income</h1>
+            Total monthly income: $<%= @monthly_income_total %>
+            <em>|</em>
+            Total yearly income: $<%= @yearly_income_total %>
+            <div>
+                <% @personal_income.each do |income| %>
+                    <%= link_to income.title, personal_saving_path(income) %>
+                    Amount: $<%= income.amount %>
+                    date: <%= income.date %>
+                    <br>
+                <% end %>
+            </div>           
+        </div>
+        <div class="expenses">
+            <h1>all your expenses</h1>
+            your monthly expenses total: $<%= @monthly_expenses_total %>
+            <em>|</em>
+            your yearly expenses total: $<%= @yearly_expenses_total %>
+            <div>
+                <% @personal_expenses.each do |expense| %>
+                    <%= link_to expense.title, personal_saving_path(expense) %>
+                    Amount: $<%= expense.amount %>
+                    date: <%=expense.date %>
+                    <br>
+                <% end %>
+            </div>
+        <div class="savings">
+            <h1>all your savings</h1>
+            your monthly savings total: $<%= @monthly_savings_total %>
+            <em>|</em>
+            your yearly savings total: $<%= @yearly_savings_total %>
+            <div>
+                <% @personal_savings.each do |saving| %>
+                    <%= link_to saving.title, personal_saving_path(saving) %>
+                    Amount: $<%= saving.amount %>
+                    date: <%= saving.date %>
+                    <br>
+                <% end %>
+            </div>       
+        </div>
+        <div class="my-2"></div>
+    </div>
+</section>

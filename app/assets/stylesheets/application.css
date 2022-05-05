@@ -350,6 +350,10 @@ img{
    justify-content: flex-start;
 }
 
+.flex-space-around{
+   justify-content: space-around;
+}
+
 .grid{
    display: grid;
    grid-template-columns: 1fr;

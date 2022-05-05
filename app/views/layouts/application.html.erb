@@ -21,10 +21,10 @@
             <li><%= link_to 'FLH', flh_path %></li>
             <%if(user_signed_in?) %>
               <% if current_user.is_individual == true %>
-                <li><%= link_to 'Your Finances', personal_path %></li>
+                <li><%= link_to 'Personal Finances', personal_path %></li>
               <% end %>
               <% if current_user.is_business == true %>
-                <li><%= link_to 'Your Finances', business_path %></li>
+                <li><%= link_to 'Business Finances', business_path %></li>
               <% end %>
               <% if current_user.is_advisor == true %>
                 <li><%= link_to 'Panel', advisor_path %></li>
