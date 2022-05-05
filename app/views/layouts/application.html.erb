@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/cd1e882747.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="utilities.css">
   </head>
 
@@ -20,10 +21,10 @@
             <li><%= link_to 'FLH', flh_path %></li>
             <%if(user_signed_in?) %>
               <% if current_user.is_individual == true %>
-                <li><%= link_to 'Account over view', personal_path %></li>
+                <li><%= link_to 'Your Finances', personal_path %></li>
               <% end %>
               <% if current_user.is_business == true %>
-                <li><%= link_to 'Account over view', business_path %></li>
+                <li><%= link_to 'Your Finances', business_path %></li>
               <% end %>
               <% if current_user.is_advisor == true %>
                 <li><%= link_to 'Panel', advisor_path %></li>
@@ -31,7 +32,7 @@
               <% if current_user.is_admin == true %>
                 <li><%= link_to 'Panel', admin_path %></li>
               <% end %>
-              <li><%= button_to "Log out", session_path, method: :delete %></li>
+              <li><%= button_to "Log out", session_path, method: :delete, class:"btn btn-primary" %></li>
             <% else %>
               <li><%= link_to 'Sign In Page', new_session_path%></li>
             <% end %>
