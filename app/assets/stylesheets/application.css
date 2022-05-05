@@ -47,7 +47,7 @@ a{
    color: var(--accent-color);
 }
 
-h1,h2{
+h1,h2,h3{
    font-weight: 300;
    line-height: 1.2;
    margin: 10px 0;
@@ -226,9 +226,10 @@ img{
 
 /* flh-home */
 .flh-home{
-   height: 100vw;
+   height: 82vh;
    position: relative;
 }
+
 
 .flh-home-body .flex{
    justify-content: space-around;

@@ -1,6 +1,15 @@
-<div>
-    <% @flh_events.each do |flh_event| %>
-        <%= link_to flh_event.title, flh_event_path(flh_event) %>
-        <br>
-    <% end %>
-</div>
+
+<section class="flh-module">
+    <div class="container grid">
+        <div class="my-1">
+        </div>
+        <div class="card " >
+           <% @flh_events.each do |flh_event| %>
+                <%= link_to flh_event.title, flh_event_path(flh_event) %>
+                <br>
+            <% end %>
+        </div>
+        <div class="my-1">
+        </div>
+    </div>
+</section>
