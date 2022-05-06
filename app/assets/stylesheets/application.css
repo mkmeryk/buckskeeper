@@ -47,7 +47,7 @@ a{
    color: var(--accent-color);
 }
 
-h1,h2,h3{
+h1,h2,h3,h4,h5{
    font-weight: 300;
    line-height: 1.2;
    margin: 10px 0;
@@ -71,7 +71,7 @@ img{
 }
 
 .flh-logo{
-   width: 100px;
+   width: 50%;
 }
 
 /* navbar  */

@@ -43,7 +43,7 @@ class PersonalController < ApplicationController
 
         def cashflow(net_income,assets,liabilities)
             cashflow = 0.00
-            cashflow = net_income  - liabilities
+            cashflow = net_income - liabilities
             return cashflow
         end
 
