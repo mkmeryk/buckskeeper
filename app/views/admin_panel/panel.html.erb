@@ -1,29 +1,45 @@
-<div>
-    <h1>Create a new user</h1>
-    <%= link_to 'Create a new user', newuserbyadmin_path %>
-    <h1>All Users</h1>
-    <hr>
-    <% @users.each do |user| %>
-        User name: <%= user.first_name %>
-        |
-        User Id: <%= user.id %>
-        
-        <% if user.is_individual == true %>
-            | Individual 
-        <% end %>
-        
-        <% if user.is_business == true %>
-            | Business 
-        <% end %>
 
-        <% if user.is_advisor == true %>
-            | Advisor 
-        <% end %>
+<section class="panel">
+    <div class="container grid">
+        <div class="account-info">
+            <h3>your account <%= link_to current_user.first_name, user_path(current_user) %></h3>
+        </div>
+        <div class="admin-abilities">
+            <h3>Create a new user</h3>
+            <hr>
+            <%= link_to 'Create a new user', newuserbyadmin_path %>
+        </div>
+        <div class="users-list">
+            <h3>All Users</h3>
+            <hr>
+            <div class="container" >
+                <% @users.each do |user| %>
+                    <ul>
+                        User name: <%= user.first_name %>
+                        |
+                        User Id: <%= user.id %>
+                        
+                        <% if user.is_individual == true %>
+                            | Individual 
+                        <% end %>
+                        
+                        <% if user.is_business == true %>
+                            | Business 
+                        <% end %>
 
-        <% if user.is_admin == true %>
-            | Admin 
-        <% end %>
-        
-        <br>
-    <% end %>
-</div>
+                        <% if user.is_advisor == true %>
+                            | Advisor 
+                        <% end %>
+
+                        <% if user.is_admin == true %>
+                            | Admin 
+                        <% end %>
+                    </ul>
+                    
+                    <br>
+                <% end %>
+            </div>
+            
+        </div>
+    </div>
+</section>

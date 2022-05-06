@@ -50,7 +50,9 @@ Rails.application.routes.draw do
   get('admin', to: 'admin_panel#panel')
   get('newuserbyadmin', to: 'admin_panel#new_user')
   post('newuserbyadmin', to: 'admin_panel#new_user')
-  
+  get('/legal', to: 'welcome#legal')
+  get('/about', to: 'welcome#about')
+  get('/features', to: 'welcome#features')
 
 
 end

@@ -55,6 +55,8 @@ gem "faker"
 
 gem 'by_star', '~> 4.0'
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+
 #end of custome gems
 
 group :development, :test do

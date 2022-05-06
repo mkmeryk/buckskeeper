@@ -1,10 +1,25 @@
-<h2><%= link_to 'Create a new question', new_flh_society_question_path %></h2>
-<br>
-<div>
-    <% @flh_society_questions.each do |question| %>
-        <%= link_to question.title, flh_society_question_path(question) %>
-        <br>
-        <%= question.body%>
 
-    <% end %>
-</div>
+<section class="flh-module">
+    <div class="container grid">
+        <%= link_to 'Ask a Question', new_flh_society_question_path ,class:"btn btn-primary my-1" %>
+        <div class="">
+        </div>
+        <div >
+            <% @flh_society_questions.each do |question| %>
+                <div class="card">
+                    <div class="flex-society" >
+                        Q: <%= link_to question.title, flh_society_question_path(question) %>
+                        <br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; <%= question.body%>
+                        <%(question.flh_society_answers).each do |answer| %>
+                            A: <%= answer.body %>
+                            <br>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="my-1">
+        </div>
+    </div>
+</section>

@@ -1,51 +1,56 @@
-<div class="page_container">
 
-    <h1 class="text-center">Sign Up</h1>
 
-    <%= form_with model: @user do |f|%>
-    <% if @user.errors.any? %>
-        <p><%= @user.errors.full_messages.join(', ') %> </p>
-    <% end %>
+<section class="sign-in p-1">
+    <div class="form signup ">
+        <div class="card flex my-1">
+            <h1 class="text-center">Sign Up</h1>
+            <div>
+                <%= form_with model: @user do |f|%>
+                <% if @user.errors.any? %>
+                    <p><%= @user.errors.full_messages.join(', ') %> </p>
+                <% end %>
         
-        <div class="p-1">
-            <%= f.label :first_name%>
-            <%= f.text_field :first_name ,class:"form-control"%>
-        </div>
-        
-        <div class="p-1">
-            <%= f.label :last_name%>
-            <%= f.text_field :last_name ,class:"form-control"%>
-        </div>
-        <div class="p-1">
-            <%= f.label :email%>
-            <%= f.text_field :email ,class:"form-control"%>
-        </div>
-        <div class="p-1">
-            <%= f.label :phone_number%>
-            <%= f.text_field :phone_number ,class:"form-control"%>
-        </div>
-        <div class="p-1">
-            <%= f.label :password%>
-            <%= f.text_field :password ,class:"form-control"%>
-        </div>
-        <div class="p-1">
-            <%= f.label :password_confirmation%>
-            <%= f.text_field :password_confirmation ,class:"form-control"%>
-        </div>
-        <div>
-            <small>
-                <p>What type of account would you like to signup for?</p>
-                <p>You can also sign up for both</p>
-            </small>
-            
-            <%= f.check_box :is_individual %>
-            <%= f.label :is_individual, "Personal Account" %>
+                <div class="p-1">
+                    <%= f.label :first_name%>
+                    <%= f.text_field :first_name ,class:"form-control input"%>
+                </div>
+                
+                <div class="p-1">
+                    <%= f.label :last_name%>
+                    <%= f.text_field :last_name ,class:"form-control input"%>
+                </div>
+                <div class="p-1">
+                    <%= f.label :email%>
+                    <%= f.text_field :email ,class:"form-control input"%>
+                </div>
+                <div class="p-1">
+                    <%= f.label :phone_number%>
+                    <%= f.text_field :phone_number ,class:"form-control input"%>
+                </div>
+                <div class="p-1">
+                    <%= f.label :password%>
+                    <%= f.text_field :password ,class:"form-control input"%>
+                </div>
+                <div class="p-1">
+                    <%= f.label :password_confirmation%>
+                    <%= f.text_field :password_confirmation ,class:"form-control input"%>
+                </div>
+                <div class="my-1">
+                    <small>
+                        <p>Select an account type: </p>
+                        
+                    </small>
+                    
+                    <%= f.check_box :is_individual %>
+                    <%= f.label :is_individual, "Personal Account" ,class:"form-control " %>
 
-            <%= f.check_box :is_business %>
-            <%= f.label :is_business, "Small Business Account" %>
+                    <%= f.check_box :is_business %>
+                    <%= f.label :is_business, "Business Account",class:"form-control " %>
 
+                </div>
+                <%= f.submit "Sign Up" , class:"btn btn-primary" %>
+                <% end %>
+            </div>
         </div>
-        <%= f.submit "Sign Up" , class:"btn btn-primary" %>
-    <% end %>
-
-</div>
+    </div>
+</section>

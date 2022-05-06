@@ -1,24 +1,48 @@
-<%= form_with model: @user ,url: user_path(@user) , method: :patch do |f|%>
-    <% if @user.errors.any? %>
-        <p><%= @user.errors.full_messages.join(', ') %> </p>
-    <% end %>
+
+
+<section class="sign-in p-1">
+    <div class="form signup ">
+        <div class="card flex my-1">
+            <h1 class="text-center">Sign Up</h1>
+            <div>
+                <%= form_with model: @user,url: user_path(@user) , method: :patch do |f|%>
+                <% if @user.errors.any? %>
+                    <p><%= @user.errors.full_messages.join(', ') %> </p>
+                <% end %>
         
-        <div class="p-1">
-            <%= f.label :first_name%>
-            <%= f.text_field :first_name ,class:"form-control"%>
+                <div class="p-1">
+                    <%= f.label :first_name%>
+                    <%= f.text_field :first_name ,class:"form-control input"%>
+                </div>
+                
+                <div class="p-1">
+                    <%= f.label :last_name%>
+                    <%= f.text_field :last_name ,class:"form-control input"%>
+                </div>
+                <div class="p-1">
+                    <%= f.label :email%>
+                    <%= f.text_field :email ,class:"form-control input"%>
+                </div>
+                <div class="p-1">
+                    <%= f.label :phone_number%>
+                    <%= f.text_field :phone_number ,class:"form-control input"%>
+                </div>
+                <div class="my-1">
+                    <small>
+                        <p>Select an account type: </p>
+                        
+                    </small>
+                    
+                    <%= f.check_box :is_individual %>
+                    <%= f.label :is_individual, "Personal Account" ,class:"form-control " %>
+
+                    <%= f.check_box :is_business %>
+                    <%= f.label :is_business, "Business Account",class:"form-control " %>
+
+                </div>
+                <%= f.submit "Update info" , class:"btn btn-primary" %>
+                <% end %>
+            </div>
         </div>
-        
-        <div class="p-1">
-            <%= f.label :last_name%>
-            <%= f.text_field :last_name ,class:"form-control"%>
-        </div>
-        <div class="p-1">
-            <%= f.label :email%>
-            <%= f.text_field :email ,class:"form-control"%>
-        </div>
-        <div class="p-1">
-            <%= f.label :phone_number%>
-            <%= f.text_field :phone_number ,class:"form-control"%>
-        </div>
-        <%= f.submit "Update info" , class:"btn btn-primary" %>
-<% end %>
+    </div>
+</section>
