@@ -66,14 +66,20 @@ img{
    width: 200px;
 }
 
+.logo::-webkit-scrollbar {
+   display: none;
+}
+
+.flh-logo{
+   width: 100px;
+}
+
 /* navbar  */
 
 .navbar{
    background-color: #152617;
    color: var(--accent-color);
-   height: 80px;
-   scroll-behavior: unset;
-   
+   height: 100px;
 }
 
 .navbar ul{
@@ -95,6 +101,10 @@ img{
    justify-content: space-between;
    align-items: center;
    align-content: center;
+}
+
+.navbar::-webkit-scrollbar {
+   display: none;
 }
 
 /* footer */
