@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Description
+Buckskeeper is a web app that allows individuals and small business owners to overlook their finances and develop healthier and stronger finances, grow their financial knowledge and get in touch with a financial advisor. For financial advisors also it makes it easier to overlook the client's finances as the data of cash flow and asset accumulation already exist in the client's profile.
